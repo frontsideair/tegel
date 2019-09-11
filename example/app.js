@@ -15,15 +15,15 @@ const toggles = [
   }
 ];
 const storage = new MemoryStorage();
-const toggleService = new Tgl({ toggles, storage });
+const tgl = new Tgl({ toggles, storage });
 
 const app = express();
 
 app.get("/", async (req, res) => {
-  const universal = await toggleService.get("universal");
+  const universal = await tgl.get("universal");
   res.send(universal ? "Hello, universe!" : "Hello, world!");
 });
 
-app.use("/tgl", toggleService.router());
+app.use("/tgl", tgl.router());
 
 module.exports = app;
