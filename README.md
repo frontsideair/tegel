@@ -6,27 +6,26 @@
 
 ```javascript
 const express = require("express");
+const MemoryStorage = require("../storage/memory");
 const tgl = require("../lib");
 
-const toggles = {
-  universal: false,
-  lasers: true
-};
+const toggles = new Map([["universal", false], ["lasers", true]]);
+const storage = new MemoryStorage(toggles);
 
 const app = express();
 
-app.get("/", (req, res) =>
-  res.send(toggles.universal ? "Hello, universe!" : "Hello world!")
-);
+app.get("/", async (req, res) => {
+  const universal = await storage.get("universal");
+  res.send(universal ? "Hello, universe!" : "Hello, world!");
+});
 
-app.use("/tgl", tgl(toggles));
+app.use("/tgl", tgl(storage));
 
-app.listen(3000, () => console.log(`Example app listening on port 3000!`));
+app.listen(3000, () => console.log("Example app listening on port 3000!"));
 ```
 
 # Roadmap
 
-- [ ] Use `express-session` compatible stores
 - [ ] Prettier UI
 - [ ] Include middleware for setting feature flags using query params
 - [ ] Support enum flags
