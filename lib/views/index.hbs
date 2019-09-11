@@ -13,7 +13,9 @@
     <ul>
       {{#each store}}
       <li>
-        <input type="checkbox" name="{{@key}}" id="{{@key}}" {{#if this}}checked{{/if}}> {{@key}}
+        <label>
+          <input type="checkbox" name="{{@key}}" id="{{@key}}" {{#if this}}checked{{/if}}> {{@key}}
+        </label>
       </li>
       {{/each}}
     </ul>
