@@ -7,20 +7,31 @@
 ```javascript
 const express = require("express");
 const MemoryStorage = require("../storage/memory");
-const tgl = require("../lib");
+const Tgl = require("../lib");
 
-const toggles = new Map([["universal", false], ["lasers", true]]);
-const storage = new MemoryStorage(toggles);
+const toggles = [
+  {
+    name: "universal",
+    description: "Do we address the world, or the whole universe?",
+    default: false
+  },
+  {
+    name: "lasers",
+    description: "Enable lasers!!!",
+    default: true
+  }
+];
+const storage = new MemoryStorage();
+const toggleService = new Tgl({ toggles, storage });
 
 const app = express();
 
 app.get("/", async (req, res) => {
-  const universal = await storage.get("universal");
+  const universal = await toggleService.get("universal");
   res.send(universal ? "Hello, universe!" : "Hello, world!");
 });
 
-app.use("/tgl", tgl(storage));
-
+app.use("/tgl", toggleService.router());
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
 ```
 

@@ -11,10 +11,10 @@
 <body>
   <form method="post">
     <ul>
-      {{#each store}}
+      {{#each toggles}}
       <li>
         <label>
-          <input type="checkbox" name="{{this.[0]}}" id="{{this.[0]}}" {{#if this.[1]}}checked{{/if}}> {{this.[0]}}
+          <input type="checkbox" name="{{name}}" id="{{name}}" {{#if value}}checked{{/if}}> {{description}} ({{name}})
         </label>
       </li>
       {{/each}}
