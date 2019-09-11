@@ -4,6 +4,8 @@
 
 # Usage
 
+You need to initialize `tgl` with a list of existing toggles and a [KV Storage](https://github.com/WICG/kv-storage) compliant store. Since it uses async iterators, only Node.js versions >=10.0.0 are supported.
+
 ```javascript
 const express = require("express");
 const MemoryStorage = require("../storage/memory");
