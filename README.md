@@ -4,29 +4,41 @@
 
 # Usage
 
+You need to initialize `tgl` with a list of existing toggles and a [KV Storage](https://github.com/WICG/kv-storage) compliant store. Since it uses async iterators, only Node.js versions >=10.0.0 are supported.
+
 ```javascript
 const express = require("express");
-const tgl = require("../lib");
+const MemoryStorage = require("../storage/memory");
+const Tgl = require("../lib");
 
-const toggles = {
-  universal: false,
-  lasers: true
-};
+const toggles = [
+  {
+    name: "universal",
+    description: "Do we address the world, or the whole universe?",
+    default: false
+  },
+  {
+    name: "lasers",
+    description: "Enable lasers!!!",
+    default: true
+  }
+];
+const storage = new MemoryStorage();
+const tgl = new Tgl({ toggles, storage });
 
 const app = express();
 
-app.get("/", (req, res) =>
-  res.send(toggles.universal ? "Hello, universe!" : "Hello world!")
-);
+app.get("/", async (req, res) => {
+  const universal = await tgl.get("universal");
+  res.send(universal ? "Hello, universe!" : "Hello, world!");
+});
 
-app.use("/tgl", tgl(toggles));
-
-app.listen(3000, () => console.log(`Example app listening on port 3000!`));
+app.use("/tgl", tgl.router());
+app.listen(3000, () => console.log("Example app listening on port 3000!"));
 ```
 
 # Roadmap
 
-- [ ] Use `express-session` compatible stores
 - [ ] Prettier UI
 - [ ] Include middleware for setting feature flags using query params
 - [ ] Support enum flags
