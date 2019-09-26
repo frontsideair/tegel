@@ -28,12 +28,15 @@ const tgl = new Tgl({ toggles, storage });
 
 const app = express();
 
+app.use(tgl.middleware());
+
 app.get("/", async (req, res) => {
-  const universal = await tgl.get("universal");
+  const universal = await req.tgl.get("universal");
   res.send(universal ? "Hello, universe!" : "Hello, world!");
 });
 
 app.use("/tgl", tgl.router());
+
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
 ```
 
