@@ -22,12 +22,8 @@ class MemoryStorage {
   keys() {
     const keys = this._store.keys();
     return {
-      [Symbol.asyncIterator]() {
-        return {
-          async next() {
-            return keys.next();
-          }
-        };
+      async *[Symbol.asyncIterator]() {
+        yield* keys;
       }
     };
   }
@@ -35,12 +31,8 @@ class MemoryStorage {
   values() {
     const values = this._store.values();
     return {
-      [Symbol.asyncIterator]() {
-        return {
-          async next() {
-            return values.next();
-          }
-        };
+      async *[Symbol.asyncIterator]() {
+        yield* values;
       }
     };
   }
@@ -48,12 +40,8 @@ class MemoryStorage {
   entries() {
     const entries = this._store.entries();
     return {
-      [Symbol.asyncIterator]() {
-        return {
-          async next() {
-            return entries.next();
-          }
-        };
+      async *[Symbol.asyncIterator]() {
+        yield* entries;
       }
     };
   }
