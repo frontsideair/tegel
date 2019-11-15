@@ -4,11 +4,11 @@
 
 # Usage
 
-You need to initialize `tgl` with a list of existing toggles and a [KV Storage](https://github.com/WICG/kv-storage) compliant store. Since it uses async iterators, only Node.js versions >=10.0.0 are supported.
+You need to initialize `tgl` with a list of existing toggles and a store that has an async `Map` interface, like [Keyv](https://github.com/lukechilds/keyv).
 
 ```javascript
 const express = require("express");
-const MemoryStorage = require("../storage/memory");
+const Keyv = require("keyv");
 const Tgl = require("../lib");
 
 const toggles = [
@@ -23,7 +23,7 @@ const toggles = [
     default: true
   }
 ];
-const storage = new MemoryStorage();
+const storage = new Keyv("sqlite://:memory:");
 const tgl = new Tgl({ toggles, storage });
 
 const app = express();

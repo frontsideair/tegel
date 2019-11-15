@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "@keyv/sqlite": "^2.0.1",
+    "express": "^4.17.1",
+    "keyv": "^3.1.0"
   }
 }
