@@ -1,5 +1,5 @@
 const express = require("express");
-const MemoryStorage = require("../storage/memory");
+const Keyv = require("keyv");
 const Tgl = require("../lib");
 
 const toggles = [
@@ -14,7 +14,7 @@ const toggles = [
     default: true
   }
 ];
-const storage = new MemoryStorage();
+const storage = new Keyv("sqlite://:memory:");
 const tgl = new Tgl({ toggles, storage });
 
 const app = express();
