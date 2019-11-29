@@ -10,7 +10,7 @@ test("It should switch universe flag on", async () => {
   const response = await request(app)
     .post("/tgl")
     .send("universal=on");
-  expect(response.status).toBe(302);
+  expect(response.status).toBe(200);
 });
 
 test("It should read hello universe", async () => {
