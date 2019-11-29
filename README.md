@@ -9,7 +9,7 @@ You need to initialize `tgl` with a list of existing toggles and a store that ha
 ```javascript
 const express = require("express");
 const Keyv = require("keyv");
-const Tgl = require("../lib");
+const { Tgl, middleware, router } = require("tgl");
 
 const toggles = [
   {
@@ -23,19 +23,19 @@ const toggles = [
     default: true
   }
 ];
-const storage = new Keyv("sqlite://:memory:");
+const storage = new Keyv();
 const tgl = new Tgl({ toggles, storage });
 
 const app = express();
 
-app.use(tgl.middleware());
+app.use(middleware(tgl));
 
-app.get("/", async (req, res) => {
-  const universal = await req.tgl.get("universal");
+app.get("/", (req, res) => {
+  const universal = req.tgl.universal;
   res.send(universal ? "Hello, universe!" : "Hello, world!");
 });
 
-app.use("/tgl", tgl.router());
+app.use("/tgl", router(tgl));
 
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
 ```
