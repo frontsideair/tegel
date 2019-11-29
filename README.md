@@ -15,12 +15,12 @@ const toggles = [
   {
     name: "universal",
     description: "Do we address the world, or the whole universe?",
-    default: false
+    defaultValue: false
   },
   {
     name: "lasers",
     description: "Enable lasers!!!",
-    default: true
+    defaultValue: true
   }
 ];
 const storage = new Keyv();
