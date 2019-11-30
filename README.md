@@ -39,9 +39,3 @@ app.use("/tgl", router(tgl));
 
 app.listen(3000, () => console.log("Example app listening on port 3000!"));
 ```
-
-# Roadmap
-
-- [ ] Prettier UI
-- [ ] Include middleware for setting feature flags using query params
-- [ ] Support enum flags
