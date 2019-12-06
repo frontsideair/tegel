@@ -8,7 +8,7 @@ test("It should read hello world", async () => {
 
 test("It should switch universe flag on", async () => {
   const response = await request(app)
-    .post("/tgl")
+    .post("/tegel")
     .send("universal=on");
   expect(response.status).toBe(200);
 });

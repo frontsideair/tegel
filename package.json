@@ -1,5 +1,5 @@
 {
-  "name": "tgl",
+  "name": "tegel",
   "version": "0.4.0",
   "description": "A simple feature toggle service for Node.js",
   "main": "lib/index.js",
@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:frontsideair/tgl"
+    "url": "git@github.com:frontsideair/tegel"
   },
-  "homepage": "http://github.com/frontsideair/tgl",
-  "bugs": "http://github.com/frontsideair/tgl/issues",
+  "homepage": "http://github.com/frontsideair/tegel",
+  "bugs": "http://github.com/frontsideair/tegel/issues",
   "files": [
     "lib"
   ],

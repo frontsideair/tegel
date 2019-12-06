@@ -1,6 +1,6 @@
 const express = require("express");
 const Keyv = require("keyv");
-const { Tgl, middleware, router } = require("../lib");
+const { Tegel, middleware, router } = require("../lib");
 
 const toggles = [
   {
@@ -15,17 +15,17 @@ const toggles = [
   }
 ];
 const storage = new Keyv();
-const tgl = new Tgl({ toggles, storage });
+const tegel = new Tegel({ toggles, storage });
 
 const app = express();
 
-app.use(middleware(tgl));
+app.use(middleware(tegel));
 
 app.get("/", (req, res) => {
-  const universal = req.tgl.get("universal");
+  const universal = req.tegel.get("universal");
   res.send(universal ? "Hello, universe!" : "Hello, world!");
 });
 
-app.use("/tgl", router(tgl));
+app.use("/tegel", router(tegel));
 
 module.exports = app;
