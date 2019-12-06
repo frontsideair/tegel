@@ -31,7 +31,7 @@ const app = express();
 app.use(middleware(tgl));
 
 app.get("/", (req, res) => {
-  const universal = req.tgl.universal;
+  const universal = req.tgl.get("universal");
   res.send(universal ? "Hello, universe!" : "Hello, world!");
 });
 
