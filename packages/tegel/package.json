@@ -8,15 +8,13 @@
     "flag",
     "toggle",
     "switch",
-    "express",
     "feature flag",
     "feature toggle",
     "feature switch"
   ],
   "author": {
     "name": "Fatih Altinok",
-    "email": "fatihaltinok@live.com",
-    "url": "https://6nok.org"
+    "email": "fatihaltinok@live.com"
   },
   "repository": {
     "type": "git",

@@ -1,32 +1,20 @@
 {
   "name": "tegel-example",
   "version": "1.0.0",
-  "description": "A simple feature toggle service for Node.js",
+  "description": "An example Node.js app with feature toggles handled by tegel",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [
-    "feature",
-    "flag",
-    "toggle",
-    "switch",
-    "express",
-    "feature flag",
-    "feature toggle",
-    "feature switch"
-  ],
   "author": {
     "name": "Fatih Altinok",
-    "email": "fatihaltinok@live.com",
-    "url": "https://6nok.org"
+    "email": "fatihaltinok@live.com"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:frontsideair/tegel"
   },
   "homepage": "http://github.com/frontsideair/tegel",
-  "bugs": "http://github.com/frontsideair/tegel/issues",
   "license": "MIT",
   "dependencies": {
     "tegel": "^1.0.0",
@@ -37,8 +25,5 @@
   "devDependencies": {
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
-  },
-  "engines": {
-    "node": ">=8.0.0"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "tegel-router",
   "version": "1.0.0",
-  "description": "A simple feature toggle service for Node.js",
+  "description": "Simple Express.js app/router for toggling feature flags with tegel",
   "main": "index.js",
   "keywords": [
     "feature",
@@ -15,8 +15,7 @@
   ],
   "author": {
     "name": "Fatih Altinok",
-    "email": "fatihaltinok@live.com",
-    "url": "https://6nok.org"
+    "email": "fatihaltinok@live.com"
   },
   "repository": {
     "type": "git",
