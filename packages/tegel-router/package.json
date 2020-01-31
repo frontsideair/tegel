@@ -1,0 +1,40 @@
+{
+  "name": "tegel-router",
+  "version": "1.0.0",
+  "description": "Simple Express.js app/router for toggling feature flags with tegel",
+  "main": "index.js",
+  "keywords": [
+    "feature",
+    "flag",
+    "toggle",
+    "switch",
+    "express",
+    "feature flag",
+    "feature toggle",
+    "feature switch"
+  ],
+  "author": {
+    "name": "Fatih Altinok",
+    "email": "fatihaltinok@live.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:frontsideair/tegel"
+  },
+  "homepage": "http://github.com/frontsideair/tegel",
+  "bugs": "http://github.com/frontsideair/tegel/issues",
+  "license": "MIT",
+  "peerDependencies": {
+    "tegel": "^1.0.0",
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  },
+  "devDependencies": {
+    "tegel": "^1.0.0",
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

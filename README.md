@@ -9,7 +9,8 @@ You need to initialize `tegel` with a list of existing toggles and a store that 
 ```javascript
 const express = require("express");
 const Keyv = require("keyv");
-const { Tegel, middleware, router } = require("tegel");
+const { Tegel, middleware } = require("tegel");
+const router = require("tegel-router");
 
 const toggles = [
   {

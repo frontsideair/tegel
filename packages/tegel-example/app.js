@@ -1,6 +1,7 @@
 const express = require("express");
 const Keyv = require("keyv");
-const { Tegel, middleware, router } = require("../lib");
+const { Tegel, middleware } = require("tegel");
+const router = require("tegel-router");
 
 const toggles = [
   {

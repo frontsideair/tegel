@@ -1,0 +1,29 @@
+{
+  "name": "tegel",
+  "version": "1.0.0",
+  "description": "A simple feature toggle service for Node.js",
+  "main": "index.js",
+  "keywords": [
+    "feature",
+    "flag",
+    "toggle",
+    "switch",
+    "feature flag",
+    "feature toggle",
+    "feature switch"
+  ],
+  "author": {
+    "name": "Fatih Altinok",
+    "email": "fatihaltinok@live.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:frontsideair/tegel"
+  },
+  "homepage": "http://github.com/frontsideair/tegel",
+  "bugs": "http://github.com/frontsideair/tegel/issues",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
