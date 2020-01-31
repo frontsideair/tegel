@@ -1,6 +1,6 @@
 {
   "name": "tegel-example",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An example Node.js app with feature toggles handled by tegel",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "keyv": "^4.0.0",
-    "tegel": "^1.0.2",
-    "tegel-router": "^1.0.2"
+    "tegel": "^1.0.3",
+    "tegel-router": "^1.0.3"
   },
   "devDependencies": {
     "jest": "^24.9.0",
