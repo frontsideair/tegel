@@ -1,7 +1,9 @@
 function toObject(array) {
   const object = {};
   for (const [key, value] of array) {
-    object[key] = value;
+    if (value !== undefined) {
+      object[key] = value;
+    }
   }
   return object;
 }
