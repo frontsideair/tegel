@@ -16,7 +16,7 @@ const toggles = [
   {
     name: "universal",
     description: "Do we address the world, or the whole universe?",
-    defaultValue: false
+    defaultValue: true
   },
   {
     name: "lasers",
