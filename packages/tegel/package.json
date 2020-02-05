@@ -1,6 +1,6 @@
 {
   "name": "tegel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple feature toggle service for Node.js",
   "main": "index.js",
   "keywords": [
