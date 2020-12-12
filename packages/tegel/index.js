@@ -10,6 +10,8 @@ function toObject(array) {
 
 class Tegel {
   constructor({ toggles, storage, interval = 1000 }) {
+    Object.freeze(toggles);
+    toggles.forEach(toggle => Object.freeze(toggle));
     this.toggles = toggles;
     this._storage = storage;
     this._defaults = toObject(
